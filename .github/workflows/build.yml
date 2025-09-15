@@ -1,0 +1,31 @@
+name: Build
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - mc: "1.21.8"
+            fabric: "0.131.0+1.21.8"
+            yacl: "3.7.1+1.21.6-fabric"
+            sheeplib: "1.4.2+1.21.8"
+          - mc: "1.21.4"
+            fabric: "0.127.0+1.21.4"
+            yacl: "3.7.1+1.21.4-fabric"
+            sheeplib: "1.4.2+1.21.4"
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+          cache: gradle
+      - name: Build
+        run: ./gradlew build -Pminecraft_version=${{ matrix.mc }} -Pfabric_version=${{ matrix.fabric }} -Pyacl_version=${{ matrix.yacl }} -Psheeplib_version=${{ matrix.sheeplib }}
