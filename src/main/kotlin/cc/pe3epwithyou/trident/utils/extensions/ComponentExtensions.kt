@@ -16,6 +16,6 @@ object ComponentExtensions {
 
     fun MutableComponent.defaultFont(): MutableComponent = this.withFont(Style.DEFAULT_FONT)
 
-    fun MutableComponent.withTridentFont(font: String = "icon", offest: Int = 0): MutableComponent =
-        this.withFont(TridentFont.getTridentFont(font, offest))
+    fun MutableComponent.withTridentFont(font: String = "icon", offset: Int = 0): MutableComponent =
+        this.withFont(TridentFont.getTridentFont(font, offset))
 }
