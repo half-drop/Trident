@@ -6,7 +6,7 @@ Trident
 Client-side utility mod for [MCC Island](https://mcchampionship.com/island/), providing a huge range of utility and quality of life features.
 
 ## Requirements
-- Minecraft 1.21.8
+- Minecraft 1.21.8 (1.21.4 port available)
 - [Yet Another Config Lib](https://modrinth.com/mod/yacl)
 - [Fabric Language Kotlin](https://modrinth.com/mod/fabric-language-kotlin)
 - [Noxesium](https://modrinth.com/mod/noxesium)
